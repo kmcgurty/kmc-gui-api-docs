@@ -1,0 +1,56 @@
+.side-bar {
+    width: inherit !important;
+}
+
+@media (min-width: 66.5rem) {
+    .main {
+        margin-left: 265px !important;
+        max-width: calc(100vw - 280px) !important;
+    }
+}
+
+@media (min-width: 50rem) {
+    .side-bar {
+        width: 265px !important;
+    }
+    
+    .main {
+        margin-left: 265px !important;
+        max-width: calc(100vw - 280px) !important;
+    }
+}
+
+.highlight {
+    line-height: 1.15em;
+}
+
+.type.string {
+    color: #adbbff;
+}
+
+.type.number {
+    color: #adf381;
+}
+
+.type.bool {
+    color: #FF9F40;
+}
+
+.type.function {
+    color: #FF4A4A;
+}
+
+.type.table {
+    color: #FB84E9;
+}
+
+.type a { color: inherit; } 
+
+.align-top { 
+	vertical-align: top;
+} 
+
+.main-image  { 
+	width: 100%;
+	max-width: 1000px;
+} 

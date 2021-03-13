@@ -1,0 +1,415 @@
+<p>Please see <a href="usage">Usage</a> for more examples and best practices.</p>
+
+<h1 class="no_toc" id="table-of-contents">Table of Contents</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#functions" id="markdown-toc-functions">Functions</a>    <ul>
+      <li><a href="#guicreatemenu" id="markdown-toc-guicreatemenu">GUI.createMenu(…)</a></li>
+      <li><a href="#guiaddbutton" id="markdown-toc-guiaddbutton">GUI.addButton(…)</a></li>
+      <li><a href="#guisetactivemenu" id="markdown-toc-guisetactivemenu">GUI.setActiveMenu(…)</a></li>
+      <li><a href="#guitick" id="markdown-toc-guitick">GUI.tick()</a></li>
+      <li><a href="#guiupdatestatustext" id="markdown-toc-guiupdatestatustext">GUI.updateStatusText(…)</a></li>
+      <li><a href="#guiisactivebuttontoggledon" id="markdown-toc-guiisactivebuttontoggledon">GUI.isActiveButtonToggledOn()</a></li>
+      <li><a href="#guiisbuttontoggledon" id="markdown-toc-guiisbuttontoggledon">GUI.isButtonToggledOn(…)</a></li>
+      <li><a href="#guitogglebuttonstate" id="markdown-toc-guitogglebuttonstate">GUI.toggleButtonState(…)</a></li>
+      <li><a href="#guiremovebutton" id="markdown-toc-guiremovebutton">GUI.removeButton(…)</a></li>
+      <li><a href="#guiremovemenu" id="markdown-toc-guiremovemenu">GUI.removeMenu(…)</a></li>
+    </ul>
+  </li>
+  <li><a href="#variables" id="markdown-toc-variables">Variables</a>    <ul>
+      <li><a href="#guinavbuttons----" id="markdown-toc-guinavbuttons----">GUI.navButtons = { … }</a></li>
+      <li><a href="#guititlecolor----" id="markdown-toc-guititlecolor----">GUI.titleColor = { … }</a></li>
+      <li><a href="#guibuttoncolor----" id="markdown-toc-guibuttoncolor----">GUI.buttonColor = { … }</a></li>
+      <li><a href="#guiactivebuttoncolor----" id="markdown-toc-guiactivebuttoncolor----">GUI.activeButtonColor = { … }</a></li>
+      <li><a href="#guisound----" id="markdown-toc-guisound----">GUI.sound = { … }</a></li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h1 id="functions">Functions</h1>
+
+<h2 id="guicreatemenu">GUI.createMenu(…)</h2>
+<h3 class="no_toc" id="guicreatemenumenuname-prevmenu-title-menux-menuy-buttonwidth-buttonheight-buttonspacing-fontsize-fontname-savelastbuttonpos"><code class="language-plaintext highlighter-rouge">GUI.createMenu(menuName, prevMenu, title, menuX, menuY, buttonWidth, buttonHeight, buttonSpacing, fontSize, fontName, saveLastButtonPos)</code></h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">menuName</code>  <span class="type string"><a href="https://www.lua.org/pil/2.4.html" target="_blank">&lt;string&gt;</a></span>  Name of the menu that <code class="language-plaintext highlighter-rouge">GUI.createMenu</code> is creating</li>
+  <li><code class="language-plaintext highlighter-rouge">prevMenu</code>  <span class="type string"><a href="https://www.lua.org/pil/2.4.html" target="_blank">&lt;string&gt;</a></span>  Name of the menu that the <code class="language-plaintext highlighter-rouge">navBack</code> key should take the user to when inside this menu. Set to <code class="language-plaintext highlighter-rouge">nil</code> to close the menu altogether.</li>
+  <li><code class="language-plaintext highlighter-rouge">title</code>  <span class="type string"><a href="https://www.lua.org/pil/2.4.html" target="_blank">&lt;string&gt;</a></span>  Text that appears at the top, above the buttons</li>
+  <li><code class="language-plaintext highlighter-rouge">menuX</code>  <span class="type number"><a href="https://www.lua.org/pil/2.3.html" target="_blank">&lt;number&gt;</a></span>  Top left of the menu starting <code class="language-plaintext highlighter-rouge">x</code> position</li>
+  <li><code class="language-plaintext highlighter-rouge">menuY</code>  <span class="type number"><a href="https://www.lua.org/pil/2.3.html" target="_blank">&lt;number&gt;</a></span> 	Top left of the menu starting <code class="language-plaintext highlighter-rouge">y</code> position</li>
+  <li><code class="language-plaintext highlighter-rouge">buttonWidth</code>  <span class="type number"><a href="https://www.lua.org/pil/2.3.html" target="_blank">&lt;number&gt;</a></span>  How wide each button should be in the <code class="language-plaintext highlighter-rouge">x</code> direction</li>
+  <li><code class="language-plaintext highlighter-rouge">buttonHeight</code>  <span class="type number"><a href="https://www.lua.org/pil/2.3.html" target="_blank">&lt;number&gt;</a></span>  How tall each button should be in the <code class="language-plaintext highlighter-rouge">y</code> direction</li>
+  <li><code class="language-plaintext highlighter-rouge">buttonSpacing</code>  <span class="type number"><a href="https://www.lua.org/pil/2.3.html" target="_blank">&lt;number&gt;</a></span>  How tall the gap should be between each button</li>
+  <li><code class="language-plaintext highlighter-rouge">fontSize</code>  <span class="type number"><a href="https://www.lua.org/pil/2.3.html" target="_blank">&lt;number&gt;</a></span>  How tall the font should be in pixels</li>
+  <li><code class="language-plaintext highlighter-rouge">fontName</code>  <span class="type string"><a href="https://www.lua.org/pil/2.4.html" target="_blank">&lt;string&gt;</a></span>  Name of <code class="language-plaintext highlighter-rouge">.ttf</code> file to use for the font (suggested <code class="language-plaintext highlighter-rouge">bold.ttf</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">saveLastButtonPos</code>  <span class="type bool"><a href="https://www.lua.org/pil/2.2.html" target="_blank">&lt;boolean&gt;</a></span>  After exiting and re-entering the menu, should the button the user on be remembered? If false, it will be reset back to the first button.</li>
+  <li>Returns: nothing</li>
+</ul>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">--the g(lobal) table is used to keep non-tabled global variables from being leaked across multiple lua files. See Usage.</span>
+<span class="n">g</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">g</span><span class="p">.</span><span class="n">menuX</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">g</span><span class="p">.</span><span class="n">menuY</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">g</span><span class="p">.</span><span class="n">buttonWidth</span> <span class="o">=</span> <span class="mi">225</span>
+<span class="n">g</span><span class="p">.</span><span class="n">buttonHeight</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">g</span><span class="p">.</span><span class="n">buttonSpacing</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">g</span><span class="p">.</span><span class="n">fontSize</span> <span class="o">=</span> <span class="mi">23</span>
+<span class="n">g</span><span class="p">.</span><span class="n">fontName</span> <span class="o">=</span> <span class="s2">"bold.ttf"</span>
+<span class="n">g</span><span class="p">.</span><span class="n">saveLastButtonPos</span> <span class="o">=</span> <span class="kc">true</span>
+
+<span class="n">GUI</span><span class="p">.</span><span class="n">createMenu</span><span class="p">(</span><span class="s2">"main"</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="s2">"Mod Menu"</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">menuX</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">menuY</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">buttonWidth</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">buttonHeight</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">buttonSpacing</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">fontSize</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">fontName</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">saveLastButtonPos</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="guiaddbutton">GUI.addButton(…)</h2>
+<h3 class="no_toc" id="guiaddbuttonparentmenu-text-funct-args-toggleable-textscale-font"><code class="language-plaintext highlighter-rouge">GUI.addButton(parentMenu, text, funct, args, toggleable, textScale, font)</code></h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">parentMenu</code>  <span class="type string"><a href="https://www.lua.org/pil/2.4.html" target="_blank">&lt;string&gt;</a></span>  What menu this button belongs to.</li>
+  <li><code class="language-plaintext highlighter-rouge">text</code>  <span class="type string"><a href="https://www.lua.org/pil/2.4.html" target="_blank">&lt;string&gt;</a></span>  Text drawn on the button</li>
+  <li><code class="language-plaintext highlighter-rouge">funct</code>  <span class="type function"><a href="https://www.lua.org/pil/2.6.html" target="_blank">&lt;function&gt;</a></span>  Callback function for when the user presses the <code class="language-plaintext highlighter-rouge">select</code> key</li>
+  <li><code class="language-plaintext highlighter-rouge">args</code>  <span class="type table"><a href="https://www.lua.org/pil/2.5.html" target="_blank">&lt;table&gt;</a></span>  Up to 20 arguments to feed into the defined <code class="language-plaintext highlighter-rouge">funct</code>. <code class="language-plaintext highlighter-rouge">{arg1, ..., arg20}</code>. Can also be a single  <span class="type string"><a href="https://www.lua.org/pil/2.4.html" target="_blank">&lt;string&gt;</a></span> ,  <span class="type bool"><a href="https://www.lua.org/pil/2.2.html" target="_blank">&lt;boolean&gt;</a></span> , or  <span class="type number"><a href="https://www.lua.org/pil/2.3.html" target="_blank">&lt;number&gt;</a></span> </li>
+  <li><code class="language-plaintext highlighter-rouge">toggleable</code>  <span class="type bool"><a href="https://www.lua.org/pil/2.2.html" target="_blank">&lt;boolean&gt;</a></span>  Should button be a toggleable button? Will have <code class="language-plaintext highlighter-rouge">[ON]</code> or <code class="language-plaintext highlighter-rouge">[OFF]</code> appended to the end of the button text, and the state can be grabbed at any time</li>
+  <li><code class="language-plaintext highlighter-rouge">textScale</code> <span class="type number"><a href="https://www.lua.org/pil/2.3.html" target="_blank">&lt;number&gt;</a></span>  how tall the font should be in pixels (aka font size)</li>
+  <li><code class="language-plaintext highlighter-rouge">font</code> <span class="type string"><a href="https://www.lua.org/pil/2.4.html" target="_blank">&lt;string&gt;</a></span>  name of <code class="language-plaintext highlighter-rouge">.ttf</code> file to use for the font (suggested <code class="language-plaintext highlighter-rouge">bold.ttf</code>)</li>
+  <li>Returns: nothing</li>
+</ul>
+
+<p>Adds a button to a menu that has already been created. <code class="language-plaintext highlighter-rouge">parentMenu</code> must match the name of a menu already created, <em>otherwise this will not work.</em></p>
+
+<p>The position in the menu, and the index of the button are dependent on when the button is added. If you want button <code class="language-plaintext highlighter-rouge">x</code> to appear before button <code class="language-plaintext highlighter-rouge">y</code>, you will need to addButton() <code class="language-plaintext highlighter-rouge">x</code> first.</p>
+
+<p>See <a href="#guicreatemenu">GUI.createMenu</a> for what <code class="language-plaintext highlighter-rouge">g</code> can be in the example below.</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GUI</span><span class="p">.</span><span class="n">createMenu</span><span class="p">(</span><span class="s2">"main"</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="s2">"Mod Menu"</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">menuX</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">menuY</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">buttonWidth</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">buttonHeight</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">buttonSpacing</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">fontSize</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">fontName</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">saveLastButtonPos</span><span class="p">)</span>
+<span class="n">GUI</span><span class="p">.</span><span class="n">addButton</span><span class="p">(</span><span class="s2">"main"</span><span class="p">,</span> <span class="s2">"Player Menu &gt;"</span><span class="p">,</span> <span class="n">GUI</span><span class="p">.</span><span class="n">setActiveMenu</span><span class="p">,</span> <span class="s2">"player_functions"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">fontSize</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">fontName</span><span class="p">)</span>
+<span class="n">GUI</span><span class="p">.</span><span class="n">addButton</span><span class="p">(</span><span class="s2">"main"</span><span class="p">,</span> <span class="s2">"Vehicle Menu &gt;"</span><span class="p">,</span> <span class="n">GUI</span><span class="p">.</span><span class="n">setActiveMenu</span><span class="p">,</span> <span class="s2">"vehicle_functions"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">fontSize</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">fontName</span><span class="p">)</span>
+<span class="n">GUI</span><span class="p">.</span><span class="n">addButton</span><span class="p">(</span><span class="s2">"main"</span><span class="p">,</span> <span class="s2">"Empty Menu &gt;"</span><span class="p">,</span> <span class="n">GUI</span><span class="p">.</span><span class="n">setActiveMenu</span><span class="p">,</span> <span class="s2">"empty_menu"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">fontSize</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">fontName</span><span class="p">)</span>
+<span class="n">GUI</span><span class="p">.</span><span class="n">addButton</span><span class="p">(</span><span class="s2">"main"</span><span class="p">,</span> <span class="s2">"Exit"</span><span class="p">,</span> <span class="n">GUI</span><span class="p">.</span><span class="n">setActiveMenu</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">fontSize</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">fontName</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="guisetactivemenu">GUI.setActiveMenu(…)</h2>
+<h3 class="no_toc" id="guisetactivemenumenuname"><code class="language-plaintext highlighter-rouge">GUI.setActiveMenu(menuName)</code></h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">menuName</code>  <span class="type string"><a href="https://www.lua.org/pil/2.4.html" target="_blank">&lt;string&gt;</a></span>  Name of the menu the menu that should be drawn currently</li>
+  <li>Returns: nothing</li>
+</ul>
+
+<p>Will start drawing <code class="language-plaintext highlighter-rouge">menuName</code> immediately. Often used as a callback for <code class="language-plaintext highlighter-rouge">GUI.addButton</code> to create a sub menu. Set <code class="language-plaintext highlighter-rouge">funct = GUI.setActiveMenu</code> and <code class="language-plaintext highlighter-rouge">args = "NameOfMenu"</code>. Can also be called at any time.</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GUI</span><span class="p">.</span><span class="n">setActiveMenu</span><span class="p">(</span><span class="s2">"main"</span><span class="p">)</span>
+<span class="c1">--or</span>
+<span class="n">GUI</span><span class="p">.</span><span class="n">addButton</span><span class="p">(</span><span class="s2">"main"</span><span class="p">,</span> <span class="s2">"Player Menu &gt;"</span><span class="p">,</span> <span class="n">GUI</span><span class="p">.</span><span class="n">setActiveMenu</span><span class="p">,</span> <span class="s2">"player_functions"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">fontSize</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">fontName</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="guitick">GUI.tick()</h2>
+<h3 class="no_toc" id="guitick-1"><code class="language-plaintext highlighter-rouge">GUI.tick()</code></h3>
+<ul>
+  <li>Returns: nothing</li>
+</ul>
+
+<p><em>Must be called by draw() in order for the GUI to function.</em> If you add it to the <code class="language-plaintext highlighter-rouge">tick()</code> function, it will be called out of order when rendering the menu and won’t appear.</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="nf">draw</span><span class="p">()</span>
+    <span class="n">GUI</span><span class="p">.</span><span class="n">tick</span><span class="p">()</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="guiupdatestatustext">GUI.updateStatusText(…)</h2>
+<h3 class="no_toc" id="guiupdatestatustexttext-time"><code class="language-plaintext highlighter-rouge">GUI.updateStatusText(text, time)</code></h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">text</code> <span class="type string"><a href="https://www.lua.org/pil/2.4.html" target="_blank">&lt;string&gt;</a></span>  Text to display as a message</li>
+  <li><code class="language-plaintext highlighter-rouge">time</code> <span class="type number"><a href="https://www.lua.org/pil/2.3.html" target="_blank">&lt;number&gt;</a></span>  Time in seconds for how long message should last</li>
+  <li>Returns: nothing</li>
+</ul>
+
+<p>Think of this as a toast message. <code class="language-plaintext highlighter-rouge">text</code> will appear on the screen for <code class="language-plaintext highlighter-rouge">time</code> in big letters, so the user knows what is happening at a glance.</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GUI</span><span class="p">.</span><span class="n">updateStatusText</span><span class="p">(</span><span class="s2">"Enabled God mode!"</span><span class="p">,</span> <span class="mi">2</span><span class="p">.</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="guiisactivebuttontoggledon">GUI.isActiveButtonToggledOn()</h2>
+<h3 class="no_toc" id="guiisactivebuttontoggledon-1"><code class="language-plaintext highlighter-rouge">GUI.isActiveButtonToggledOn()</code></h3>
+<ul>
+  <li>Returns:  <span class="type bool"><a href="https://www.lua.org/pil/2.2.html" target="_blank">&lt;boolean&gt;</a></span>  True if button is set to <code class="language-plaintext highlighter-rouge">[ON]</code>, false otherwise.</li>
+</ul>
+
+<p>Returns the state of the button the user currently has highlighted. This seems useless at first glance, but it’s very handy when a toggle-able button is mapped to a function, and you need to know if you should enable or disable said function.</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">main</span><span class="p">.</span><span class="n">toggleGodMode</span> <span class="o">=</span> <span class="k">function</span><span class="p">()</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">GUI</span><span class="p">.</span><span class="n">isActiveButtonToggledOn</span><span class="p">())</span> <span class="k">then</span>
+        <span class="c1">--do something</span>
+        <span class="n">GUI</span><span class="p">.</span><span class="n">updateStatusText</span><span class="p">(</span><span class="s2">"Enabled God mode"</span><span class="p">,</span> <span class="mi">2</span><span class="p">.</span><span class="mi">5</span><span class="p">)</span>
+    <span class="k">else</span>
+        <span class="c1">--do something</span>
+        <span class="n">GUI</span><span class="p">.</span><span class="n">updateStatusText</span><span class="p">(</span><span class="s2">"Disabled God mode"</span><span class="p">,</span> <span class="mi">2</span><span class="p">.</span><span class="mi">5</span><span class="p">)</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">GUI</span><span class="p">.</span><span class="n">createMenu</span><span class="p">(</span><span class="s2">"main"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"Mod Menu"</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">menuX</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">menuY</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">buttonWidth</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">buttonHeight</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">buttonSpacing</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">fontSize</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">fontName</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">saveLastButtonPos</span><span class="p">)</span>
+<span class="n">GUI</span><span class="p">.</span><span class="n">addButton</span><span class="p">(</span><span class="s2">"main"</span><span class="p">,</span> <span class="s2">"God mode"</span><span class="p">,</span> <span class="n">main</span><span class="p">.</span><span class="n">toggleGodMode</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">fontSize</span><span class="p">,</span> <span class="n">g</span><span class="p">.</span><span class="n">fontName</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="guiisbuttontoggledon">GUI.isButtonToggledOn(…)</h2>
+<h3 class="no_toc" id="guiisbuttontoggledonmenu-index"><code class="language-plaintext highlighter-rouge">GUI.isButtonToggledOn(menu, index)</code></h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">menu</code> <span class="type string"><a href="https://www.lua.org/pil/2.4.html" target="_blank">&lt;string&gt;</a></span>  Menu that the button belongs to</li>
+  <li><code class="language-plaintext highlighter-rouge">index</code> <span class="type number"><a href="https://www.lua.org/pil/2.3.html" target="_blank">&lt;number&gt;</a></span>  index of button in <code class="language-plaintext highlighter-rouge">menu</code>. Index starts at 1 (not 0 like most other languages)</li>
+  <li>Returns:  <span class="type bool"><a href="https://www.lua.org/pil/2.2.html" target="_blank">&lt;boolean&gt;</a></span>  True if button is set to <code class="language-plaintext highlighter-rouge">[ON]</code>, false otherwise.</li>
+</ul>
+
+<p>Similar to <code class="language-plaintext highlighter-rouge">GUI.isActiveButtonToggledOn()</code>, except you can check a specific button instead.</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">toggled</span> <span class="o">=</span> <span class="n">GUI</span><span class="p">.</span><span class="n">isButtonToggledOn</span><span class="p">(</span><span class="s2">"player_functions"</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="guitogglebuttonstate">GUI.toggleButtonState(…)</h2>
+<h3 class="no_toc" id="guitogglebuttonstatemenu-index"><code class="language-plaintext highlighter-rouge">GUI.toggleButtonState(menu, index)</code></h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">menu</code> <span class="type string"><a href="https://www.lua.org/pil/2.4.html" target="_blank">&lt;string&gt;</a></span>  Menu that the button belongs to</li>
+  <li><code class="language-plaintext highlighter-rouge">index</code> <span class="type number"><a href="https://www.lua.org/pil/2.3.html" target="_blank">&lt;number&gt;</a></span>  index of button in <code class="language-plaintext highlighter-rouge">menu</code>. Index starts at 1 (not 0 like most other languages)</li>
+  <li>Returns: nothing</li>
+</ul>
+
+<p>Gives you the ability to manually toggle a button on or off. Useful if other buttons rely on a different button to be on or off.</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">some_cool_menu</span><span class="p">.</span><span class="n">turnOffAbilities</span> <span class="o">=</span> <span class="k">function</span><span class="p">()</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">GUI</span><span class="p">.</span><span class="n">isButtonToggledOn</span><span class="p">(</span><span class="s2">"some_cool_menu"</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> <span class="k">then</span>
+		<span class="n">GUI</span><span class="p">.</span><span class="n">toggleButtonState</span><span class="p">(</span><span class="s2">"some_cool_menu"</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+	<span class="k">end</span>
+
+	<span class="k">if</span><span class="p">(</span><span class="n">GUI</span><span class="p">.</span><span class="n">isButtonToggledOn</span><span class="p">(</span><span class="s2">"some_cool_menu"</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span> <span class="k">then</span>
+		<span class="n">GUI</span><span class="p">.</span><span class="n">toggleButtonState</span><span class="p">(</span><span class="s2">"some_cool_menu"</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+	<span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">some_cool_menu</span><span class="p">.</span><span class="n">turnOffAbilities</span><span class="p">()</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="guiremovebutton">GUI.removeButton(…)</h2>
+<h3 class="no_toc" id="guiremovebuttonmenu-index"><code class="language-plaintext highlighter-rouge">GUI.removeButton(menu, index)</code></h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">menu</code> <span class="type string"><a href="https://www.lua.org/pil/2.4.html" target="_blank">&lt;string&gt;</a></span>  Menu that the button belongs to</li>
+  <li><code class="language-plaintext highlighter-rouge">index</code> <span class="type number"><a href="https://www.lua.org/pil/2.3.html" target="_blank">&lt;number&gt;</a></span>  index of button in <code class="language-plaintext highlighter-rouge">menu</code>. Index starts at 1 (not 0 like most other languages)</li>
+  <li>Returns: nothing</li>
+</ul>
+
+<p>Removes button <code class="language-plaintext highlighter-rouge">index</code> from <code class="language-plaintext highlighter-rouge">menu</code>. Useful for menus that are actively changing (e.g. a list of players currently in the session)</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GUI</span><span class="p">.</span><span class="n">removeButton</span><span class="p">(</span><span class="s2">"some_cool_menu"</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="guiremovemenu">GUI.removeMenu(…)</h2>
+<h3 class="no_toc" id="guiremovemenumenu"><code class="language-plaintext highlighter-rouge">GUI.removeMenu(menu)</code></h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">menu</code> <span class="type string"><a href="https://www.lua.org/pil/2.4.html" target="_blank">&lt;string&gt;</a></span>  Menu that is being deleted</li>
+  <li>Returns: nothing</li>
+</ul>
+
+<p>Sets <code class="language-plaintext highlighter-rouge">menu</code> to <code class="language-plaintext highlighter-rouge">nil</code> - making it unable to be drawn again.</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GUI</span><span class="p">.</span><span class="n">removeMenu</span><span class="p">(</span><span class="s2">"some_uncool_menu"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 class="no_toc" id="these-functions-have-been-documented-for-reference-but-should-not-be-called-they-are-internal-functions-for-the-gui-library"><em>These functions have been documented for reference, but should not be called. They are internal functions for the GUI library.</em></h2>
+
+<div class="code-example">
+
+  <h2 class="no_toc" id="guitoggleactivebuttonstate">GUI.toggleActiveButtonState()</h2>
+  <h3 class="no_toc" id="guitoggleactivebuttonstate-1"><code class="language-plaintext highlighter-rouge">GUI.toggleActiveButtonState()</code></h3>
+  <ul>
+    <li>Returns: nothing</li>
+  </ul>
+
+  <p>You should not have to call this function. It is used internally to toggle a button when the user presses <code class="language-plaintext highlighter-rouge">select</code>.</p>
+
+  <hr />
+
+  <h2 class="no_toc" id="guidrawstatustext">GUI.drawStatusText()</h2>
+  <h3 class="no_toc" id="guidrawstatustext-1"><code class="language-plaintext highlighter-rouge">GUI.drawStatusText()</code></h3>
+  <ul>
+    <li>Returns: nothing</li>
+  </ul>
+
+  <p>Do not call this function. It is used internally to draw the status text on the screen.</p>
+
+  <hr />
+
+  <h2 class="no_toc" id="guidrawgui">GUI.drawGUI()</h2>
+  <h3 class="no_toc" id="guidrawgui-1"><code class="language-plaintext highlighter-rouge">GUI.drawGUI()</code></h3>
+  <ul>
+    <li>Returns: nothing</li>
+  </ul>
+
+  <p>Do not call this function. It is used internally to draw the buttons on screen.</p>
+
+  <hr />
+
+  <h2 class="no_toc" id="addbuttontext">addButtonText(…)</h2>
+  <h3 class="no_toc" id="guiaddbuttontexttext-xpos-ypos-textscale-font-color-xoverride-yoverride-toggleable-statustext"><code class="language-plaintext highlighter-rouge">GUI.addButtonText(text, xpos, ypos, textScale, font, [color], [xOverride], [yOverride], [toggleable], [statusText])</code></h3>
+  <ul>
+    <li>Returns:  <span class="type table"><a href="https://www.lua.org/pil/2.5.html" target="_blank">&lt;table&gt;</a></span>  {textW, textH, statusW} - used to center the text on the buttons</li>
+  </ul>
+
+  <p>Do not call this function. It is used internally to draw text on the buttons programmatically.</p>
+
+  <hr />
+
+  <h2 class="no_toc" id="guirunbuttonfunct">GUI.runButtonFunct(…)</h2>
+  <h3 class="no_toc" id="guirunbuttonfunctcurrbutton"><code class="language-plaintext highlighter-rouge">GUI.runButtonFunct(currButton)</code></h3>
+  <ul>
+    <li><code class="language-plaintext highlighter-rouge">currButton</code>  <span class="type table"><a href="https://www.lua.org/pil/2.5.html" target="_blank">&lt;table&gt;</a></span>  Takes a <code class="language-plaintext highlighter-rouge">button</code> table as an input</li>
+    <li>Returns:  <span class="type bool"><a href="https://www.lua.org/pil/2.2.html" target="_blank">&lt;boolean&gt;</a></span>  True if called the function successfully</li>
+  </ul>
+
+  <p>Do not call this function. It is used internally to call the functions set for each button.</p>
+
+</div>
+<hr />
+
+<h1 id="variables">Variables</h1>
+
+<h2 id="guinavbuttons----">GUI.navButtons = { … }</h2>
+
+<p><code class="language-plaintext highlighter-rouge">GUI.navButtons</code> is designed to take 0, 1, or multiple keys as variables. The <code class="language-plaintext highlighter-rouge">keys</code> variable is a table of  <span class="type string"><a href="https://www.lua.org/pil/2.4.html" target="_blank">&lt;string&gt;</a></span> . A list of available keys can be found on the <a href="https://www.teardowngame.com/modding/api.html">Teardown API</a>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">GUI.menuOpen.menu</code> is the menu  <span class="type string"><a href="https://www.lua.org/pil/2.4.html" target="_blank">&lt;string&gt;</a></span>  that will open when any of the <code class="language-plaintext highlighter-rouge">menuOpen</code> keys are pressed.</p>
+
+<h3 class="no_toc" id="definition">Definition:</h3>
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GUI</span><span class="p">.</span><span class="n">navButtons</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="n">menuOpen</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="n">keys</span> <span class="o">=</span> <span class="p">{</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">},</span>
+		<span class="n">menu</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span>
+	<span class="p">},</span> 
+	<span class="n">menuClose</span> <span class="o">=</span> <span class="p">{</span><span class="n">keys</span> <span class="o">=</span> <span class="p">{</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">}},</span>
+	<span class="n">navUp</span> <span class="o">=</span> <span class="p">{</span><span class="n">keys</span> <span class="o">=</span> <span class="p">{</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">}},</span>
+	<span class="n">navDown</span> <span class="o">=</span> <span class="p">{</span><span class="n">keys</span> <span class="o">=</span> <span class="p">{</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">}},</span>
+	<span class="nb">select</span> <span class="o">=</span> <span class="p">{</span><span class="n">keys</span> <span class="o">=</span> <span class="p">{</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">}},</span>
+	<span class="n">navBack</span> <span class="o">=</span> <span class="p">{</span><span class="n">keys</span> <span class="o">=</span> <span class="p">{</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">}}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 class="no_toc" id="example">Example:</h3>
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GUI</span><span class="p">.</span><span class="n">navButtons</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">menuOpen</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">keys</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"m"</span><span class="p">},</span>
+        <span class="n">menu</span> <span class="o">=</span> <span class="s2">"main"</span>
+    <span class="p">},</span>
+    <span class="n">menuClose</span> <span class="o">=</span> <span class="p">{</span><span class="n">keys</span> <span class="o">=</span> <span class="p">{}},</span>
+    <span class="n">navUp</span> <span class="o">=</span> <span class="p">{</span><span class="n">keys</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"i"</span><span class="p">,</span> <span class="s2">"up"</span><span class="p">}},</span>
+    <span class="n">navDown</span> <span class="o">=</span> <span class="p">{</span><span class="n">keys</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"k"</span><span class="p">,</span> <span class="s2">"down"</span><span class="p">}},</span>
+    <span class="nb">select</span> <span class="o">=</span> <span class="p">{</span><span class="n">keys</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"l"</span><span class="p">,</span> <span class="s2">"return"</span><span class="p">,</span> <span class="s2">"right"</span><span class="p">}},</span>
+    <span class="n">navBack</span> <span class="o">=</span> <span class="p">{</span><span class="n">keys</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"j"</span><span class="p">,</span> <span class="s2">"left"</span><span class="p">}}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="guititlecolor----">GUI.titleColor = { … }</h2>
+
+<p>Sets the color for the menu title via RGBA. The color is for every menu created. A tad bit of transparency <code class="language-plaintext highlighter-rouge">a</code> is recommended so the player can see what’s behind the menu. 1 is completely opaque, 0 is transparent. Set this when initiating the GUI.</p>
+
+<h3 class="no_toc" id="definition-1">Definition:</h3>
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GUI</span><span class="p">.</span><span class="n">titleColor</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="n">r</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">number</span><span class="o">&gt;</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">255</span><span class="p">],</span>
+	<span class="n">g</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">number</span><span class="o">&gt;</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">255</span><span class="p">],</span>
+	<span class="n">b</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">number</span><span class="o">&gt;</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">255</span><span class="p">],</span>
+	<span class="n">a</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">number</span><span class="o">&gt;</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 class="no_toc" id="example-1">Example:</h3>
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GUI</span><span class="p">.</span><span class="n">titleColor</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="n">r</span> <span class="o">=</span> <span class="mi">255</span><span class="p">,</span> 
+	<span class="n">g</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> 
+	<span class="n">b</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> 
+	<span class="n">a</span> <span class="o">=</span> <span class="p">.</span><span class="mi">9</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="guibuttoncolor----">GUI.buttonColor = { … }</h2>
+
+<p>Sets the color of the buttons via RGBA. The color is across every menu created. A tad bit of transparency <code class="language-plaintext highlighter-rouge">a</code> is recommended so the player can see what’s behind the menu. 1 is completely opaque, 0 is transparent. Set this when initiating the GUI.</p>
+
+<h3 class="no_toc" id="definition-2">Definition:</h3>
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GUI</span><span class="p">.</span><span class="n">buttonColor</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="n">r</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">number</span><span class="o">&gt;</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">255</span><span class="p">],</span>
+	<span class="n">g</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">number</span><span class="o">&gt;</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">255</span><span class="p">],</span>
+	<span class="n">b</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">number</span><span class="o">&gt;</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">255</span><span class="p">],</span>
+	<span class="n">a</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">number</span><span class="o">&gt;</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 class="no_toc" id="example-2">Example:</h3>
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GUI</span><span class="p">.</span><span class="n">buttonColor</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="n">r</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+	<span class="n">g</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+	<span class="n">b</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+	<span class="n">a</span> <span class="o">=</span> <span class="p">.</span><span class="mi">9</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="guiactivebuttoncolor----">GUI.activeButtonColor = { … }</h2>
+
+<p>Sets the color of the button currently active (the one the user has selected) via  via RGBA. The color is across every menu created. A tad bit of transparency <code class="language-plaintext highlighter-rouge">a</code> is recommended so the player can see what’s behind the menu. 1 is completely opaque, 0 is transparent. Set this when initiating the GUI.</p>
+
+<p>This color should be different from <a href="#buttonColor--">GUI.buttonColor</a>.</p>
+
+<h3 class="no_toc" id="definition-3">Definition:</h3>
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GUI</span><span class="p">.</span><span class="n">activeButtonColor</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="n">r</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">number</span><span class="o">&gt;</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">255</span><span class="p">],</span>
+	<span class="n">g</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">number</span><span class="o">&gt;</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">255</span><span class="p">],</span>
+	<span class="n">b</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">number</span><span class="o">&gt;</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">255</span><span class="p">],</span>
+	<span class="n">a</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">number</span><span class="o">&gt;</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">}</span><span class="err">`</span>
+</code></pre></div></div>
+
+<h3 class="no_toc" id="example-3">Example:</h3>
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GUI</span><span class="p">.</span><span class="n">activeButtonColor</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="n">r</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+	<span class="n">g</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+	<span class="n">b</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+	<span class="n">a</span> <span class="o">=</span> <span class="p">.</span><span class="mi">9</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<hr />
+
+<h2 id="guisound----">GUI.sound = { … }</h2>
+
+<p>GUI.sound.tick_down is played when the user navigates up or down.</p>
+
+<p>GUI.sound.tick_up is played when the user presses select.</p>
+
+<p>See the game API on <a href="https://www.teardowngame.com/modding/api.html#LoadSound">LoadSound</a>.</p>
+
+<h3 class="no_toc" id="example-4">Example:</h3>
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GUI</span><span class="p">.</span><span class="n">sound</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="n">tick_up</span> <span class="o">=</span> <span class="n">LoadSound</span><span class="p">(</span><span class="s2">"media/tick_up.ogg"</span><span class="p">),</span>
+	<span class="n">tick_down</span> <span class="o">=</span> <span class="n">LoadSound</span><span class="p">(</span><span class="s2">"media/tick_down.ogg"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>

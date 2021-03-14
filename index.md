@@ -28,9 +28,9 @@ If you've found yourself here thinking this is a mod menu that does something on
 
 ## Installation
 
-You can find a link to download the mod here: [https://steamcommunity.com/sharedfiles/filedetails/?id=2424062619](https://steamcommunity.com/sharedfiles/filedetails/?id=2424062619)
+You can find a link to download the demo here: [https://steamcommunity.com/sharedfiles/filedetails/?id=2424062619](https://steamcommunity.com/sharedfiles/filedetails/?id=2424062619)
 
-Or here [https://github.com/kmcgurty/kmc-gui-demo](https://github.com/kmcgurty/kmc-gui-demo)
+And a link to the standalone GUI here [https://github.com/kmcgurty/kmc-gui-demo/releases/latest](https://github.com/kmcgurty/kmc-gui-demo/releases/latest)
 
 If you install the mod from Steam, you will have to select the mod and click "Make local copy" from inside the game menu.
 

@@ -28,7 +28,7 @@ github_username:  kmcgurty
 color_scheme: dark
 
 # Build settings
-theme: just-the-docs
+theme: jekyll-theme-leap-day
 plugins:
   - jekyll-feed
 

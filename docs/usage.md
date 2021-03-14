@@ -106,9 +106,9 @@ GUI.addButton("main", "Exit", GUI.setActiveMenu, nil, false, g.fontSize, g.fontN
 ```
 
 
-When calling `GUI.createMenu`, you must specify `menuName`, `prevMenu`, `title`, `menuX`, `menuY`, `buttonWidth`, `buttonHeight`, `buttonSpacing`, `fontSize`, `fontName`, `saveLastButtonPos`. All of these variables are explained under [GUI.createMenu(…)](api-reference.html#guicreatemenu).
+When calling `GUI.createMenu`, you must specify `menuName`, `prevMenu`, `title`, `menuX`, `menuY`, `buttonWidth`, `buttonHeight`, `buttonSpacing`, `fontSize`, `fontName`, `saveLastButtonPos`. All of these variables are explained under [GUI.createMenu(…)]({{ site.baseurl }}/api-reference#guicreatemenu).
 
-When calling `GUI.addButton`, you must specify `parentMenu`, `text`, `funct`, `args`, `toggleable`, `textScale`, `font`. All of these variables are explained under [GUI.addButton(…)](api-reference.html#guiaddbutton).
+When calling `GUI.addButton`, you must specify `parentMenu`, `text`, `funct`, `args`, `toggleable`, `textScale`, `font`. All of these variables are explained under [GUI.addButton(…)]({{ site.baseurl }}/api-reference#guiaddbutton).
 
 It is helpful to store these variables in a table (with the exception of `menuName`, `prevMenu`). It lets you recall them later in your mod, and you don't have to name them funny variables to keep track.
 

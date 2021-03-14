@@ -28,7 +28,7 @@ github_username:  kmcgurty
 color_scheme: dark
 
 
-theme:  just-the-docs
+remote_theme: pmarsceill/just-the-docs
 
 # Build settings
 plugins:

@@ -5,7 +5,7 @@
 layout: default
 title: Usage Guide
 nav_order: 2
-
+permalink: /usage-guide/
 ---
 
 

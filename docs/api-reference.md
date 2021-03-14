@@ -5,6 +5,7 @@
 layout: default
 title: API Reference
 nav_order: 3
+permalink: /api-reference/
 
 string: "&nbsp;<span class='type string'><a href='https://www.lua.org/pil/2.4.html' target='_blank'>&lt;string&gt;</a></span>&nbsp;"
 number: "&nbsp;<span class='type number'><a href='https://www.lua.org/pil/2.3.html' target='_blank'>&lt;number&gt;</a></span>&nbsp;"

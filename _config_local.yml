@@ -27,6 +27,8 @@ github_username:  kmcgurty
 
 color_scheme: dark
 
+exclude: ['.jekyll-cache']
+
 theme:  just-the-docs
 # Build settings
 

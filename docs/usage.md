@@ -116,7 +116,7 @@ Continue reading to [Organization](#organization) for how everything plays toget
 
 ## Linking a Button to Another Menu (creating a sub-menu)
 
-It's very helpful to have sub-menus to help break up different function groups. When you call `GUI.addButton`, you can feed it a callback function (the `funct` argument) - this is the function that gets called when the user presses select on it. 
+It's very helpful to have sub-menus to help break up different function groups. When you call `GUI.addButton`, you can feed it a callback function (the `funct` argument) - this is the function that gets called when the user presses select on it. This is where `GUI.setActiveMenu` comes into play, it takes a string (the name of a menu) as an argument. When the user presses select on it, it will bring up the menu that you've specified. 
 
 It is recommended for a sub menu, that you add " >" to the end of whatever the button text says. This way it is clear it is a sub-menu, and not a function.
 

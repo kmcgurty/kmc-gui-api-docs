@@ -227,7 +227,7 @@ end
 
 ## Recommended Folder Structure
 
-It is recommended you follow this structure below. Any functions you add should go into the `functions/` folder. See (see [File Details](#file-layout) for more details).
+It is recommended you follow this structure below. Any functions you add should go into the `functions/` folder. See (see [File Layout](#file-layout) for more details).
 
 ```
 .

@@ -22,6 +22,16 @@ While this guide is mostly geared towards programmers new to Lua and modding in 
 
 If you find any mistakes, please let me know.
 
+# Download
+
+If you haven't already downloaded the demo, you can find a link to `kmc_gui.lua` (and `helper.lua`) [here on GitHub](https://github.com/kmcgurty/kmc-gui-demo/releases/latest).
+
+# Setup
+
+I recommend keeping both of the `.lua` files in the `lib/` folder. Click [here](#recommended-folder-structure) to see the full file structure.
+
+If you aren't familiar with it already, head over to the [Teardown Modding doc](https://www.teardowngame.com/modding/#Scripting) for how to get started.
+
 # Menu Creation
 
 ## Preparing main.lua

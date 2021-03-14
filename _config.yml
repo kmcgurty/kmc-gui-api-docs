@@ -28,7 +28,6 @@ github_username:  kmcgurty
 color_scheme: dark
 
 # Build settings
-theme: jekyll-theme-leap-day
 plugins:
   - jekyll-feed
 
